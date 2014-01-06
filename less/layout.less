@@ -1,9 +1,3 @@
-/*!
-Version: 1.1
-Author: Geoff Thibeau
-Author URI: http://geoffthibeau.info/
-*/
-
 html
 {
 	background-color: @gray-darker;
@@ -220,6 +214,9 @@ section
 	display: inline-block;
 	vertical-align: top;
 	position: relative;
+	border: 1px solid; // Added for printing from non-webkit browsers.
+	border-color: #fff;
+	border-color: fade( #fff, 70% );
 	.border-radius( 10em );
 	background-color: #fff;
 	background-color: fade( #fff, 70% );
@@ -231,12 +228,16 @@ section
 
 	&.circle-text-design
 	{
+		border-color: @orange;
+		border-color: fade( @orange, 70% );
 		background-color: @orange;
 		background-color: fade( @orange, 70% );
 	}
 	
 	&.circle-text-development
 	{
+		border-color: @gray-darker;
+		border-color: fade( @gray-darker, 70% );
 		background-color: @gray-darker;
 		background-color: fade( @gray-darker, 70% );
 		color: #fff;
@@ -286,6 +287,11 @@ section
 	border: .5em solid fade( #fff, 70% );
 	.border-radius( .25em );
 	.box-shadow( 0 0 0 1px #fff );
+}
+
+.line-break
+{
+	display: none;
 }
 
 footer
