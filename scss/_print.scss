@@ -1,58 +1,57 @@
 @media print
 {
-
 	.container
 	, footer
 	{
 		font-size: 10pt;
 	}
-	
+
 	section
 	{
 		width: 6in;
 		max-width: 100%;
 		margin: 0;
 	}
-	
+
 	.skills
 	, .positions
 	{
 		width: 9in;
 		max-width: none;
 	}
-	
+
 	.position
 	{
-		&:nth-child(odd)
+		&:nth-child( odd )
 		{
 			margin-left: 1em;
 		}
-		
+
 		&:first-child
 		{
 			margin-left: 0;
 		}
 	}
-	
+
 	.circle-text
 	{
-		border-color: #fafafa;
-		background-color: #fafafa;
+		border-color: $gray-light;
+		background-color: $gray-light;
 		-webkit-print-color-adjust: exact; // Set -webkit to print background colors.
 	}
-	
+
 	.portfolio-item
 	{
 		width: auto;
 		max-width: 5in;
 		height: auto;
 	}
-	
+
 	.page-break
 	{
 		page-break-before: always; // Let's keep this classy.
 	}
-	
+
 	.line-break
 	{
 		display: inline; // Widows and orphans? Not on my watch!

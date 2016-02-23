@@ -1,0 +1,125 @@
+// RESET
+////////////////////
+// Based upon 'reset.css' in the Yahoo! User Interface Library: http://developer.yahoo.com/yui
+
+*
+, html
+, body
+, th
+, td
+{
+	margin: 0;
+	padding: 0;
+}
+
+*
+, *:before
+, *:after
+{
+	box-sizing: border-box;
+}
+
+:focus // define focus styles elsewhere
+{
+	outline: 0;
+}
+
+// HTML 5 for older browsers
+article
+, aside
+, canvas
+, details
+, figcaption
+, figure
+, footer
+, header
+, hgroup
+, nav
+, section
+, summary
+, video
+{
+	display: block;
+}
+
+ins // define highlight inserts elsewhere
+{
+	text-decoration: none;
+}
+
+del
+{
+	text-decoration: line-through;
+}
+
+table
+{
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+fieldset
+, img
+{
+	border: 0;
+}
+
+address
+, caption
+, cite
+, code
+, dfn
+, em
+, strong
+, th
+, var
+{
+	font-style: normal;
+	font-weight: normal;
+}
+
+ol
+, ul
+, li
+{
+	list-style: none;
+}
+
+caption
+, th
+{
+	text-align: left;
+}
+
+h1
+, h2
+, h3
+, h4
+, h5
+, h6
+{
+	font-size: 100%;
+	font-weight: normal;
+}
+
+q:before
+, q:after
+{
+	content: '';
+}
+
+// Restores some sensible defaults
+strong
+{
+	font-weight: 700;
+}
+
+em
+{
+	font-style: italic;
+}
+
+a img
+{
+	border: 0; // Removes IE's blue borders
+}

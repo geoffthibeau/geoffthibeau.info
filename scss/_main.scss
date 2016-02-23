@@ -1,0 +1,334 @@
+* + *
+{
+	margin-top: 1em;
+}
+
+br + br
+, nav * + *
+, p * + *
+, table * + *
+{
+	margin-top: auto;
+}
+
+html
+{
+	background-color: $gray-darker;
+}
+
+body
+{
+	font-family: $sans-serif;
+	font-size: 62.5%; // Resets to 10px
+	line-height: 1.7;
+	background-color: $gray;
+	color: $orange-darker;
+}
+
+h1
+{
+	font-family: $serif;
+	font-size: 100% * 4.5;
+	font-weight: 400;
+	line-height: 1.2;
+}
+
+h2
+{
+	$font-size-multiple: 2.25;
+	font-size: 100% * 2.25;
+	font-weight: 300;
+	line-height: 1.2;
+
+	h1 + &
+	{
+		margin-top: .5em;
+	}
+}
+
+h3
+{
+	font-size: 100% * .9;
+	letter-spacing: .1em;
+	text-transform: uppercase;
+}
+
+h3
+, h4
+{
+	font-weight: 700;
+}
+
+h5
+, h6
+{
+	font-weight: 400;
+}
+
+h4
+, h5
+, h6
+{
+	font-size: 100%;
+}
+
+small
+{
+	font-size: 90%;
+	line-height: inherit;
+}
+
+abbr
+{
+	font-size: 90%;
+	letter-spacing: .07em;
+	border-bottom: 1px dashed;
+	cursor: help;
+}
+
+a
+{
+	text-decoration: none;
+	outline: none;
+	color: $orange;
+
+	&:hover
+	{
+		text-decoration: underline;
+	}
+
+	img
+	{
+		border: none;
+	}
+}
+
+blockquote
+{
+	margin: 1.5em 3em 0 1em;
+	padding-left: 2em;
+}
+
+table
+{
+	width: 100%;
+}
+
+tr.odd
+{
+	background-color: $gray-shade;
+}
+
+tr:hover
+{
+	background-color: $gray-dark-alt;
+	color: $white;
+}
+
+td
+{
+	padding: .5em;
+}
+
+li
+{
+	margin-top: .5em;
+	margin-left: 1em;
+	list-style: disc;
+}
+
+
+.container
+{
+	width: 100%;
+	min-height: 20em;
+	margin: 0 auto;
+	padding: 0 .5em 1em;
+	font-size: 120%;
+	text-align: left;
+
+	@include bp( 1 )
+	{
+		font-size: $font-size;
+	}
+}
+
+header
+{
+	@include bp( 2 )
+	{
+		width: 200px;
+		position: fixed;
+		top: 0;
+	}
+
+	h3
+	, a
+	, .tel
+	{
+		display: block;
+	}
+}
+
+.brand
+{
+	width: 200px;
+	margin: 0;
+	padding: 29px 0 6px;
+	display: block;
+
+	img
+	{
+		width: 100%;
+		height: auto;
+	}
+}
+
+section
+, .bio
+{
+	max-width: 30em;
+}
+
+section
+{
+	@include bp( 2 )
+	{
+		width: 30em;
+		max-width: none;
+		margin-top: 0;
+		margin-left: 200px + ( ( $font-size / 10% ) * 4px );
+	}
+
+	@include bp( 3 )
+	{
+		width: 45em;
+	}
+}
+
+.skills
+, .positions
+{
+	width: 100%;
+	max-width: 30em;
+	margin-left: 0;
+}
+
+.skills
+{
+	@include bp( 3 )
+	{
+		width: 45em;
+		max-width: none;
+	}
+}
+
+
+.circle-text
+{
+	width: 12em;
+	height: 12em;
+	margin: 1em 1em 0 0;
+	padding: 2em;
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	font-size: 100%;
+	font-weight: 700;
+	text-transform: uppercase;
+	line-height: 1;
+	text-align: center;
+	border: 1px solid; // Added for printing from non-webkit browsers.
+	border-color: $white; // fallback
+	border-color: rgba( $white, .7 );
+	background-color: $white; // fallback
+	background-color: rgba( $white, .7 );
+	border-radius: 100%;
+
+	&.circle-text-design
+	{
+		border-color: $orange; // fallback
+		border-color: rgba( $orange, .7 );
+		background-color: $orange; // fallback
+		background-color: rgba( $orange, .7 );
+	}
+
+	&.circle-text-development
+	{
+		border-color: $gray-darker; // fallback
+		border-color: rgba( $gray-darker, .7 );
+		background-color: $gray-darker; // fallback
+		background-color: rgba( $gray-darker, .7 );
+		color: $white;
+	}
+
+	span
+	{
+		height: 1em;
+		margin: auto;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		display: block;
+	}
+
+	.three-line
+	{
+		bottom: 2em;
+	}
+}
+
+.positions
+, .portfolio-item
+{
+	@include bp( 4 )
+	{
+		width: 60em;
+		max-width: none;
+	}
+}
+
+
+.skill
+{
+	width: auto;
+	height: 3.25em;
+	padding: 1em;
+	border-radius: 2em;
+
+	span
+	{
+		position: relative;
+	}
+}
+
+.portfolio-item
+{
+	max-width: 100%;
+	height: auto;
+	border: .5em solid $white; // fallback
+	border: .5em solid rgba( $white, .7 );
+	border-radius: .25em;
+	box-shadow: 0 0 0 1px $white;
+}
+
+.line-break
+{
+	display: none;
+}
+
+footer
+{
+	padding: 2em .5em;
+	font-size: $font-size;
+	border-top: .3em solid $orange;
+	background-color: $gray-darker;
+
+	p
+	{
+		text-align: center;
+		color: $gray-dark-alt;
+	}
+}
