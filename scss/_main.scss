@@ -198,6 +198,7 @@ section
 		max-width: none;
 		margin-top: 0;
 		margin-left: 200px + ( ( $font-size / 10% ) * 4px );
+		padding: 4em 0;
 	}
 
 	@include bp( 3 )
