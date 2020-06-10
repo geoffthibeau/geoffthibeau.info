@@ -19,7 +19,7 @@ html
 body
 {
 	font-family: $sans-serif;
-	font-size: 62.5%; // Resets to 10px
+	font-size: 1rem;
 	line-height: 1.7;
 	background-color: $gray;
 	color: $orange-darker;
@@ -28,27 +28,41 @@ body
 h1
 {
 	font-family: $serif;
-	font-size: 100% * 4.5;
+	font-size: 3rem;
 	font-weight: 400;
 	line-height: 1.2;
+
+	@include bp( 1 )
+	{
+		font-size: 4.5rem;
+	}
 }
 
 h2
 {
-	$font-size-multiple: 2.25;
-	font-size: 100% * 2.25;
+	font-size: 1.5rem;
 	font-weight: 300;
 	line-height: 1.2;
+
+	@include bp( 1 )
+	{
+		font-size: 2.25rem;
+	}
 
 	h1 + &
 	{
 		margin-top: .5em;
 	}
+
+	.positions + &
+	{
+		margin-top: 2em;
+	}
 }
 
 h3
 {
-	font-size: 100% * .9;
+	font-size: .9rem;
 	letter-spacing: .1em;
 	text-transform: uppercase;
 }
@@ -69,18 +83,18 @@ h4
 , h5
 , h6
 {
-	font-size: 100%;
+	font-size: 1rem;
 }
 
 small
 {
-	font-size: 90%;
+	font-size: .9rem;
 	line-height: inherit;
 }
 
 abbr
 {
-	font-size: 90%;
+	font-size: .9rem;
 	letter-spacing: .07em;
 	border-bottom: 1px dashed;
 	cursor: help;
@@ -88,13 +102,21 @@ abbr
 
 a
 {
-	text-decoration: none;
+	padding-right: .25em;
+	padding-left: .25em;
+	text-decoration: underline;
+	text-decoration-color: $orange;
 	outline: none;
-	color: $orange;
+	border-radius: 3px;
+	background-image: linear-gradient(135deg, $orange, $orange-dark);
+	background-size: 0;
+	color: inherit;
 
+	&:focus,
 	&:hover
 	{
-		text-decoration: underline;
+		background-size: auto;
+		text-decoration-color: currentColor;
 	}
 
 	img
@@ -140,16 +162,17 @@ li
 
 .container
 {
-	width: 100%;
 	min-height: 20em;
 	margin: 0 auto;
 	padding: 0 .5em 1em;
-	font-size: 120%;
+	font-size: 1rem;
 	text-align: left;
 
-	@include bp( 1 )
+	@include bp( 2 )
 	{
-		font-size: $font-size;
+		display: flex;
+		justify-content: center;
+		position: relative;
 	}
 }
 
@@ -157,25 +180,32 @@ header
 {
 	@include bp( 2 )
 	{
-		width: 200px;
-		position: fixed;
+		width: $size--brand;
+		position: sticky;
 		top: 0;
+		align-self: flex-start;
 	}
+}
 
-	h3
-	, a
-	, .tel
+.contact
+{
+	li
 	{
-		display: block;
+		margin: 0;
+		padding: 0;
+		list-style: none;
 	}
 }
 
 .brand
 {
-	width: 200px;
+	width: $size--brand;
 	margin: 0;
 	padding: 29px 0 6px;
 	display: block;
+	text-decoration: none;
+	border-radius: 0;
+	background: none;
 
 	img
 	{
@@ -184,46 +214,16 @@ header
 	}
 }
 
-section
-, .bio
+main
 {
-	max-width: 30em;
-}
+	max-width: 40em;
 
-section
-{
 	@include bp( 2 )
 	{
-		width: 30em;
-		max-width: none;
 		margin-top: 0;
-		margin-left: 200px + ( ( $font-size / 10% ) * 4px );
-		padding: 4em 0;
-	}
-
-	@include bp( 3 )
-	{
-		width: 45em;
+		padding: 3em 2.66em 4em;
 	}
 }
-
-.skills
-, .positions
-{
-	width: 100%;
-	max-width: 30em;
-	margin-left: 0;
-}
-
-.skills
-{
-	@include bp( 3 )
-	{
-		width: 45em;
-		max-width: none;
-	}
-}
-
 
 .circle-text
 {
@@ -232,104 +232,39 @@ section
 	margin: 1em 1em 0 0;
 	padding: 2em;
 	position: relative;
-	display: inline-block;
-	vertical-align: top;
+	display: flex;
+	align-items: center;
 	font-size: 100%;
 	font-weight: 700;
 	text-transform: uppercase;
 	line-height: 1;
 	text-align: center;
 	border: 1px solid; // Added for printing from non-webkit browsers.
-	border-color: $white; // fallback
-	border-color: rgba( $white, .7 );
-	background-color: $white; // fallback
-	background-color: rgba( $white, .7 );
+	border-color: $orange; // fallback
+	border-color: rgba( $orange, .7 );
+	background-color: $orange; // fallback
+	background-color: rgba( $orange, .7 );
+	background-image: linear-gradient(135deg, $orange, $orange-dark);
 	border-radius: 100%;
-
-	&.circle-text-design
-	{
-		border-color: $orange; // fallback
-		border-color: rgba( $orange, .7 );
-		background-color: $orange; // fallback
-		background-color: rgba( $orange, .7 );
-	}
-
-	&.circle-text-development
-	{
-		border-color: $gray-darker; // fallback
-		border-color: rgba( $gray-darker, .7 );
-		background-color: $gray-darker; // fallback
-		background-color: rgba( $gray-darker, .7 );
-		color: $white;
-	}
-
-	span
-	{
-		height: 1em;
-		margin: auto;
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		display: block;
-	}
-
-	.three-line
-	{
-		bottom: 2em;
-	}
 }
 
 .positions
-, .portfolio-item
 {
-	@include bp( 4 )
-	{
-		width: 60em;
-		max-width: none;
-	}
-}
-
-
-.skill
-{
-	width: auto;
-	height: 3.25em;
-	padding: 1em;
-	border-radius: 2em;
-
-	span
-	{
-		position: relative;
-	}
-}
-
-.portfolio-item
-{
-	max-width: 100%;
-	height: auto;
-	border: .5em solid $white; // fallback
-	border: .5em solid rgba( $white, .7 );
-	border-radius: .25em;
-	box-shadow: 0 0 0 1px $white;
-}
-
-.line-break
-{
-	display: none;
+	margin-left: 0;
+	display: flex;
+	flex-wrap: wrap;
 }
 
 footer
 {
 	padding: 2em .5em;
-	font-size: $font-size;
+	font-size: 1rem;
 	border-top: .3em solid $orange;
 	background-color: $gray-darker;
+	color: $gray-dark-alt;
 
-	p
+	@include bp( 2 )
 	{
 		text-align: center;
-		color: $gray-dark-alt;
 	}
 }

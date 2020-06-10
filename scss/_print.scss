@@ -6,15 +6,14 @@
 		font-size: 10pt;
 	}
 
-	section
+	main
 	{
 		width: 6in;
 		max-width: 100%;
 		margin: 0;
 	}
 
-	.skills
-	, .positions
+	.positions
 	{
 		width: 9in;
 		max-width: none;
@@ -40,20 +39,8 @@
 		-webkit-print-color-adjust: exact; // Set -webkit to print background colors.
 	}
 
-	.portfolio-item
-	{
-		width: auto;
-		max-width: 5in;
-		height: auto;
-	}
-
 	.page-break
 	{
 		page-break-before: always; // Let's keep this classy.
-	}
-
-	.line-break
-	{
-		display: inline; // Widows and orphans? Not on my watch!
 	}
 }
