@@ -1,13 +1,13 @@
 {
-  "name": "geoff-thibeau",
-  "version": "2.3.0",
-  "prettier": {
-    "semi": true,
-    "trailingComma": "es5",
-    "singleQuote": true,
-    "tabWidth": 4,
-    "useTabs": true,
-    "quoteProps": "as-needed",
-    "arrowParens": "always"
-  }
+	"name": "geoff-thibeau",
+	"version": "2.3.1",
+	"prettier": {
+		"semi": true,
+		"trailingComma": "es5",
+		"singleQuote": true,
+		"tabWidth": 4,
+		"useTabs": true,
+		"quoteProps": "as-needed",
+		"arrowParens": "always"
+	}
 }
